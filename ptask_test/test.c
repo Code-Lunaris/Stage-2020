@@ -8,9 +8,6 @@
 #define true 1
 #define false 0
 
-#define MODE_OFF 0
-#define MODE_RUN 1
-#define MODE_MEAS 2
 
 int a, b, c;
 
@@ -47,22 +44,8 @@ ptask inc_b(void){
     return;
 }
 
-ptask task(){
 
-    //ptask_wait_for_activation();
-
-    while(1){
-        //sleep(1); // ne jamais appeler sleep dans une RL task
-        //la tâche peut dépasser sa dealdline
-        work_for(1,SEC);
-        printf("Hello from %d task\n", ptask_get_index());
-        ptask_wait_for_period();
-    }
-
-
-}
-
-int main_1()
+int main()
 {
     a = b = c = 0;
     ok_a = ok_b = false;
@@ -80,51 +63,3 @@ int main_1()
     return 0;
 }
 
-
-int main(){
-
-    int cpt =0;
-    int tid;
-    tspec meas;
-    rtmode_t mymodes;
-    tpars param;
-
-    calibrate();
-
-    // init
-    ptask_init(SCHED_FIFO, GLOBAL, PRIO_INHERITANCE);
-    rtmode_init(&mymodes, 2);
-
-    //création des paramètres de la tâches
-    ptask_param_init(param);
-    ptask_param_period(param, 2, SEC);
-    ptask_param_priority(param, 4);
-    ptask_param_argument(param, &cpt); 
-    ptask_param_measure(param);
-
-    //configurations des modes
-    ptask_param_modes(param, mymodes);
-    ptask_param_mode_add(param, MODE_RUN);
-
-    tid = ptask_create_param(task, &param);
-
-
-    //assert(tid!=-1);
-    //printf("%d\n", tid);
-
-    rtmode_changemode(&mymodes, MODE_RUN);
-
-    while(1){
-        sleep(6);
-        rtmode_changemode(&mymodes, MODE_MEAS);
-        meas = ptask_get_wcet(tid);
-        printf("maximum excecution time %ld \n", tspec_to(&meas, SEC));
-        meas = ptask_get_avg(tid);
-        printf("averange time %ld\n", tspec_to(&meas, SEC));
-        printf("\n---------------------\n");
-        rtmode_changemode(&mymodes, MODE_RUN);
-    }
-
-
-    return 0;
-}

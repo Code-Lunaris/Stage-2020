@@ -2,62 +2,31 @@
 #include <ptask.h>
 #include <pthread.h>
 #include <time.h>
-#include <tstat.h>
-#include <calibrate.h>
-
-#define true 1
-#define false 0
+#include <assert.h>
 
 
-int a, b, c;
 
-int  ok_a;
-int ok_b;
+ptask mytask(void){
 
-ptask inc_a(void){
-
-    //ptask_wait_for_activation();
-
-    while(a<10000){
-        a++;
-        c++;
+    while(1){
+        printf("Task %d is running\n", ptask_get_index());
         ptask_wait_for_period();
     }
-
-    ok_a = true;
-
-    return;
 }
 
-ptask inc_b(void){
-
-    //ptask_wait_for_activation();
-
-    while(b<1000){
-        b++;
-        c++;
-        ptask_wait_for_period();
-    }
-
-    ok_b = true;
-
-    return;
-}
 
 
 int main()
 {
-    a = b = c = 0;
-    ok_a = ok_b = false;
-    int res;
+    int tid1, tid2;
 
     ptask_init(SCHED_FIFO, GLOBAL, PRIO_INHERITANCE);
-    res = ptask_create_prio(inc_a, 5, 1, NOW);
-    res = ptask_create_prio(inc_b, 5, 1, NOW);
+    tid1 = ptask_create_prio(mytask, 5000, 2, NOW);   // tâche périodique de période 5 secondes (5000 ms)
+    tid2 = ptask_create_prio(mytask, 1000, 1, NOW);   // tâche péiodique de période 1 seconde (1000 ms)
 
-    while(!ok_a && !ok_b);
+    assert(tid1 != -1 && tid2 != -1);
 
-    printf("%d + %d = %d", a, b, c);
+    while(1);
     
 
     return 0;

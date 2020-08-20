@@ -1,0 +1,78 @@
+Detecting CXX [-std=c++1z] compiler features failed to compile with the following output:
+Change Dir: /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e0bae/fast"
+make[1] : on entre dans le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+/usr/bin/make -f CMakeFiles/cmTC_e0bae.dir/build.make CMakeFiles/cmTC_e0bae.dir/build
+make[2] : on entre dans le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_e0bae.dir/feature_tests.cxx.o
+/usr/bin/nvcc    -std=c++1z -o CMakeFiles/cmTC_e0bae.dir/feature_tests.cxx.o -c /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/feature_tests.cxx
+nvcc fatal   : Value 'c++1z' is not defined for option 'std'
+CMakeFiles/cmTC_e0bae.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_e0bae.dir/feature_tests.cxx.o' failed
+make[2]: *** [CMakeFiles/cmTC_e0bae.dir/feature_tests.cxx.o] Error 1
+make[2] : on quitte le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+Makefile:126: recipe for target 'cmTC_e0bae/fast' failed
+make[1]: *** [cmTC_e0bae/fast] Error 2
+make[1] : on quitte le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c9930/fast"
+make[1] : on entre dans le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+/usr/bin/make -f CMakeFiles/cmTC_c9930.dir/build.make CMakeFiles/cmTC_c9930.dir/build
+make[2] : on entre dans le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_c9930.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c9930.dir/CheckSymbolExists.c.o   -c /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c9930
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9930.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_c9930.dir/CheckSymbolExists.c.o  -o cmTC_c9930 
+CMakeFiles/cmTC_c9930.dir/CheckSymbolExists.c.o : Dans la fonction « main » :
+CheckSymbolExists.c:(.text+0x1b) : référence indéfinie vers « pthread_create »
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c9930.dir/build.make:97: recipe for target 'cmTC_c9930' failed
+make[2]: *** [cmTC_c9930] Error 1
+make[2] : on quitte le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+Makefile:126: recipe for target 'cmTC_c9930/fast' failed
+make[1]: *** [cmTC_c9930/fast] Error 2
+make[1] : on quitte le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+
+File /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_07b14/fast"
+make[1] : on entre dans le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+/usr/bin/make -f CMakeFiles/cmTC_07b14.dir/build.make CMakeFiles/cmTC_07b14.dir/build
+make[2] : on entre dans le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_07b14.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_07b14.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_07b14
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07b14.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_07b14.dir/CheckFunctionExists.c.o  -o cmTC_07b14 -lpthreads 
+/usr/bin/ld : ne peut trouver -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_07b14.dir/build.make:97: recipe for target 'cmTC_07b14' failed
+make[2]: *** [cmTC_07b14] Error 1
+make[2] : on quitte le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+Makefile:126: recipe for target 'cmTC_07b14/fast' failed
+make[1]: *** [cmTC_07b14/fast] Error 2
+make[1] : on quitte le répertoire « /home/aurelie/Documents/core_perception/ndt_gpu/build/CMakeFiles/CMakeTmp »
+
+

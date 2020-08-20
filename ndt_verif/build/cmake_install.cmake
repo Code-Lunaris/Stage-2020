@@ -1,4 +1,4 @@
-# Install script for directory: /home/aurelie/Documents/ndt
+# Install script for directory: /home/aurelie/Documents/ndt_verif
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aurelie/Documents/ndt/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/aurelie/Documents/ndt_verif/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

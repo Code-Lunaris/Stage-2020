@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aurelie/Documents/ndt
+CMAKE_SOURCE_DIR = /home/aurelie/Documents/ndt_verif
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aurelie/Documents/ndt/build
+CMAKE_BINARY_DIR = /home/aurelie/Documents/ndt_verif/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelie/Documents/ndt/build/CMakeFiles /home/aurelie/Documents/ndt/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelie/Documents/ndt_verif/build/CMakeFiles /home/aurelie/Documents/ndt_verif/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelie/Documents/ndt/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelie/Documents/ndt_verif/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named normal_distributions_transform
+# Target rules for targets named error_verif
 
 # Build rule for target.
-normal_distributions_transform: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 normal_distributions_transform
-.PHONY : normal_distributions_transform
+error_verif: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 error_verif
+.PHONY : error_verif
 
 # fast build rule for target.
-normal_distributions_transform/fast:
-	$(MAKE) -f CMakeFiles/normal_distributions_transform.dir/build.make CMakeFiles/normal_distributions_transform.dir/build
-.PHONY : normal_distributions_transform/fast
+error_verif/fast:
+	$(MAKE) -f CMakeFiles/error_verif.dir/build.make CMakeFiles/error_verif.dir/build
+.PHONY : error_verif/fast
 
-main.o: main.cpp.o
+error_verif.o: error_verif.cpp.o
 
-.PHONY : main.o
+.PHONY : error_verif.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/normal_distributions_transform.dir/build.make CMakeFiles/normal_distributions_transform.dir/main.cpp.o
-.PHONY : main.cpp.o
+error_verif.cpp.o:
+	$(MAKE) -f CMakeFiles/error_verif.dir/build.make CMakeFiles/error_verif.dir/error_verif.cpp.o
+.PHONY : error_verif.cpp.o
 
-main.i: main.cpp.i
+error_verif.i: error_verif.cpp.i
 
-.PHONY : main.i
+.PHONY : error_verif.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/normal_distributions_transform.dir/build.make CMakeFiles/normal_distributions_transform.dir/main.cpp.i
-.PHONY : main.cpp.i
+error_verif.cpp.i:
+	$(MAKE) -f CMakeFiles/error_verif.dir/build.make CMakeFiles/error_verif.dir/error_verif.cpp.i
+.PHONY : error_verif.cpp.i
 
-main.s: main.cpp.s
+error_verif.s: error_verif.cpp.s
 
-.PHONY : main.s
+.PHONY : error_verif.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/normal_distributions_transform.dir/build.make CMakeFiles/normal_distributions_transform.dir/main.cpp.s
-.PHONY : main.cpp.s
+error_verif.cpp.s:
+	$(MAKE) -f CMakeFiles/error_verif.dir/build.make CMakeFiles/error_verif.dir/error_verif.cpp.s
+.PHONY : error_verif.cpp.s
 
 # Help Target
 help:
@@ -157,11 +157,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... normal_distributions_transform"
+	@echo "... error_verif"
 	@echo "... edit_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... error_verif.o"
+	@echo "... error_verif.i"
+	@echo "... error_verif.s"
 .PHONY : help
 
 

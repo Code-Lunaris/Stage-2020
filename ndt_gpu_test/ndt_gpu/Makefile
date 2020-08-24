@@ -3,7 +3,6 @@ CC = nvcc
 PCL_PATH = /usr/include/pcl-1.8
 EIGEN_PATH = /usr/include/eigen3
 
-#LIB_FLAG = -I ${NDT_LIB_PATH}
 LIB_FLAG += -I ${PCL_PATH}
 LIB_FLAG += -I ${EIGEN_PATH}
 
@@ -15,10 +14,22 @@ LIBS += -lpcl_apps -lpcl_common -lpcl_features -lpcl_filters -lpcl_io -lpcl_kdtr
 SRC_PATH = ./src
 INC_PATH = ./include
 
-all: MatrixDevice.o MatrixHost.o NormalDistributionsTransform.o Registration.o SymmetricEigenSolver.o VoxelGrid.o
+NDT_GPU_LIB = libndt_gpu.a
+
+OBJECTS = MatrixDevice.o
+OBJECTS += MatrixHost.o
+OBJECTS += NormalDistributionsTransform.o
+OBJECTS += Registration.o
+OBJECTS += SymmetricEigenSolver.o
+OBJECTS += VoxelGrid.o
+
+all: ${NDT_GPU_LIB}
 
 %.o : ./src/%.cu
 	${CC} ${LIB_FLAG}  -I ${INC_PATH} -c $<
+
+${NDT_GPU_LIB}: ${OBJECTS}
+	ar rs ${NDT_GPU_LIB} ${OBJECTS}
 
 clean:
 	rm -r *.o

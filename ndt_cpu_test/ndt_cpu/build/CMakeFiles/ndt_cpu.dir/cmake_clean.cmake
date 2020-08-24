@@ -4,7 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ndt_cpu.dir/src/VoxelGrid.cpp.o"
   "CMakeFiles/ndt_cpu.dir/src/Octree.cpp.o"
   "libndt_cpu.pdb"
-  "libndt_cpu.so"
+  "libndt_cpu.a"
 )
 
 # Per-language clean rules from dependency scanning.

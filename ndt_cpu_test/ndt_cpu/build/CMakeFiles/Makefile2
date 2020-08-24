@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aurelie/Documents/ndt_cpu_test/ndt_cpu
+CMAKE_SOURCE_DIR = /media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aurelie/Documents/ndt_cpu_test/ndt_cpu/build
+CMAKE_BINARY_DIR = /media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/ndt_cpu.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/aurelie/Documents/ndt_cpu_test/ndt_cpu/build
 CMakeFiles/ndt_cpu.dir/all:
 	$(MAKE) -f CMakeFiles/ndt_cpu.dir/build.make CMakeFiles/ndt_cpu.dir/depend
 	$(MAKE) -f CMakeFiles/ndt_cpu.dir/build.make CMakeFiles/ndt_cpu.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aurelie/Documents/ndt_cpu_test/ndt_cpu/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ndt_cpu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ndt_cpu"
 .PHONY : CMakeFiles/ndt_cpu.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/ndt_cpu.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ndt_cpu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelie/Documents/ndt_cpu_test/ndt_cpu/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ndt_cpu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aurelie/Documents/ndt_cpu_test/ndt_cpu/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu/build/CMakeFiles 0
 .PHONY : CMakeFiles/ndt_cpu.dir/rule
 
 # Convenience name for target.

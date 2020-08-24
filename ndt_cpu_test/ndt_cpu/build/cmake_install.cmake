@@ -1,4 +1,4 @@
-# Install script for directory: /home/aurelie/Documents/ndt_cpu_test/ndt_cpu
+# Install script for directory: /media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aurelie/Documents/ndt_cpu_test/ndt_cpu/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/aurelie/7CAC-F5FD/stage/Stage-2020/ndt_cpu_test/ndt_cpu/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
